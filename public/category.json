@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category_name": "All Categories",
+    "category": "All",
+    "icon": "LayoutGrid"
+  },
+  {
+    "id": 2,
+    "category_name": "Development",
+    "category": "Development",
+    "icon": "CodeXml"
+  },
+  {
+    "id": 3,
+    "category_name": "Design",
+    "category": "Design",
+    "icon": "Palette"
+  },
+  {
+    "id": 4,
+    "category_name": "Marketing",
+    "category": "Marketing",
+    "icon": "Megaphone"
+  },
+  {
+    "id": 5,
+    "category_name": "Data Science",
+    "category": "Data Science",
+    "icon": "Database"
+  }
+]
