@@ -5,7 +5,7 @@ import React from 'react';
 const AllCoursesPage = async () => {
     const res = await fetch('https://skill-sphere-online-learning-platfo-seven.vercel.app/data.json');
     const courses = await res.json();
-    console.log(courses," courses data");
+   
 
 
     return (
