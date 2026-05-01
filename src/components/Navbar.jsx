@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6">
           <Link href="/" className={activeClass("/")}>Home</Link>
-          <Link href="/books" className={activeClass("/books")}>Courses</Link>
+          <Link href="/courses" className={activeClass("/courses")}>Courses</Link>
           <Link href="/profile" className={activeClass("/profile")}>My Profile</Link>
         </div>
 
