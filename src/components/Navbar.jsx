@@ -39,17 +39,20 @@ const Navbar = () => {
 
 
       <div className="flex gap-2">
-          <Link
-          href="/login"
-          className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md"
-        >
-          Login
-        </Link>
+         
           <Link
           href="/register"
           className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md"
         >
            Register
+        </Link>
+
+
+         <Link
+          href="/login"
+          className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md"
+        >
+          Login
         </Link>
       </div>
 
