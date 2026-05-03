@@ -8,15 +8,14 @@ import {
   TrendingUp,
 } from "lucide-react";
 import CourseCard from "./CourseCard";
+import NewReleases from "./NewReleases";
 
 const TopCourse = async () => {
-    const res = await fetch('https://skill-sphere-online-learning-platfo-seven.vercel.app/data.json');
-    const courses = await res.json();
-    console.log(courses," courses data");
-    const allPopularCourses = courses.filter(course => course.rating >= 4.5);
-    const popularCourses = allPopularCourses.slice(0, 4);
-    console.log(popularCourses, " top 4 popular courses");
-
+const res = await fetch('https://skill-sphere-online-learning-platfo-seven.vercel.app/data.json');
+const courses = await res.json();
+const filteredCourses = courses.filter(course => course.rating >= 4.5);
+const sortedCourses = filteredCourses.sort((a, b) => b.rating - a.rating);
+const popularCourses = sortedCourses.slice(0, 4);
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen p-8 font-sans text-slate-900">
@@ -108,8 +107,11 @@ const TopCourse = async () => {
         </div>
       </section>
 
+
+
+
       {/* Top Instructors Section */}
-      <section className="container mx-auto">
+      <section className="container mx-auto mb-12 ">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-extrabold flex items-center gap-2">
             <Trophy className="text-amber-500 fill-amber-500" size={20} /> Top
@@ -124,7 +126,7 @@ const TopCourse = async () => {
           {/* Instructor 1 */}
           <div className="bg-white border border-slate-100 p-4 rounded-2xl flex items-center gap-4 hover:shadow-sm transition-shadow cursor-pointer">
             <img
-              src="/images/inst1.jpg"
+              src={"https://i.ibb.co.com/3yyLSYvt/man1.jpg"}
               alt="Instructor"
               className="w-14 h-14 rounded-2xl object-cover"
             />
@@ -140,7 +142,7 @@ const TopCourse = async () => {
           {/* Instructor 2 */}
           <div className="bg-white border border-slate-100 p-4 rounded-2xl flex items-center gap-4 hover:shadow-sm transition-shadow cursor-pointer">
             <img
-              src="/images/inst2.jpg"
+              src={"https://i.ibb.co.com/NdcLFK9V/From-Klick-Pin-CF-Love-this-guide-to-viral-motivational-words-ideas-that-look-high-end-but-stay-pra.jpg"}
               alt="Instructor"
               className="w-14 h-14 rounded-2xl object-cover"
             />
@@ -156,7 +158,7 @@ const TopCourse = async () => {
           {/* Instructor 3 */}
           <div className="bg-white border border-slate-100 p-4 rounded-2xl flex items-center gap-4 hover:shadow-sm transition-shadow cursor-pointer">
             <img
-              src="/images/inst3.jpg"
+              src={"https://i.ibb.co.com/kgnJ1Fbm/man2.jpg"}
               alt="Instructor"
               className="w-14 h-14 rounded-2xl object-cover"
             />
@@ -172,7 +174,7 @@ const TopCourse = async () => {
           {/* Instructor 4 */}
           <div className="bg-white border border-slate-100 p-4 rounded-2xl flex items-center gap-4 hover:shadow-sm transition-shadow cursor-pointer">
             <img
-              src="/images/inst4.jpg"
+              src={"https://i.ibb.co.com/JwPS1FQt/Emily-Clark.jpg"}
               alt="Instructor"
               className="w-14 h-14 rounded-2xl object-cover"
             />
@@ -186,6 +188,25 @@ const TopCourse = async () => {
           </div>
         </div>
       </section>
+
+
+
+
+
+{/* other content */}
+
+
+
+{/* new releases */}
+
+<div>
+    <NewReleases></NewReleases>
+</div>
+
+
+      
+
+
     </div>
   );
 };

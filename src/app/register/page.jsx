@@ -11,7 +11,10 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from 'next/link';
+
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function RegisterPage() {
 
@@ -36,9 +39,9 @@ console.log({data,error});
 
 if (!error) {
   router.push("/login");
-  alert("Registration successful!");
+  toast.success("Registration successful!");
 } else {
-  alert("User already exists. Use another email.");
+  toast.error("User already exists. Use another email.");
 }
 
 };
@@ -48,7 +51,7 @@ if (!error) {
   
     <div className="p-4" >
       <Card className="flex flex-col md:flex-row mx-auto w-full max-w-4xl overflow-hidden border-none shadow-2xl m-10 rounded-3xl container mx-auto ">
-        
+
   {/* ata hocche image section */}
   <div className="hidden md:flex w-1/2 bg-[#7C3AED] items-center justify-center p-12">
     <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-8 border-white/10 shadow-inner">
@@ -119,6 +122,23 @@ if (!error) {
         <Button type="submit" className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-purple-200">
           Register
         </Button>
+
+
+
+
+  <p className="text-center text-sm text-gray-600 mt-4">
+    Already have an account?{" "}
+    <Link
+        href="/login"
+        className="text-purple-600 font-medium hover:underline">
+    Login here
+    </Link>
+</p>
+
+
+
+
+
       </div>
     </Form>
   </div>

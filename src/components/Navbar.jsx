@@ -5,6 +5,10 @@ import { useState } from "react";
 import { MdMenuBook } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import { usePathname } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
+
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -15,6 +19,20 @@ const Navbar = () => {
     pathname === path
       ? "border-b-2 border-purple-500 text-purple-400 pb-1"
       : "pb-1";
+
+
+
+
+const userData = authClient.useSession();
+// console.log(userData,"user data");
+const user = userData.data?.user;
+console.log(user,"user");
+
+const handleLogout = async () => {
+  await authClient.signOut();
+  // window.location.href = "/login";
+};
+  
 
   return (
     <div className=" bg-gray-800 sticky top-0 z-50">
@@ -39,25 +57,43 @@ const Navbar = () => {
 
 
       <div className="flex gap-2">
-         
-          <Link
-          href="/register"
-          className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md"
-        >
-           Register
-        </Link>
+  { !user && (
+    <>
+      <Link
+        href="/register"
+        className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md text-white"
+      >
+        Register
+      </Link>
+      <Link
+        href="/login"
+        className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md text-white"
+      >
+        Login
+      </Link>
+    </>
+  )}
 
 
-         <Link
-          href="/login"
-          className="hidden md:block bg-purple-700 hover:bg-purple-800 px-5 py-2 rounded-md"
-        >
-          Login
-        </Link>
-      </div>
+  {
+    user && 
 
 
+<div  className="flex items-center gap-2 ">
+      <Avatar>
+        <Avatar.Image alt="John Doe" 
+        src={user?.image}
+        referrerPolicy="no-referrer"
+        />
+        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+      </Avatar>
 
+      <Button variant="danger" onClick={handleLogout}  >LogOut</Button>
+    </div>
+  }
+</div>
+      
+      
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(true)}

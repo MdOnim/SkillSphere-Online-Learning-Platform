@@ -11,7 +11,10 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
+import { toast } from "react-toastify";
 
 export default function LogiinPage() {
 
@@ -33,14 +36,27 @@ export default function LogiinPage() {
 
 
 if (!error) {
-  router.push("/dashboard");
-  alert("Login successful!");
+  router.push("/");
+  toast.success("Login successful!");
+  setTimeout(() => {
+        router.push("/");
+        router.refresh();
+      }, 500);
+
 } else {
-  alert("Invalid email or password.");
+  toast.error("Invalid email or password.");
+}
+};
+
+
+const handleGoogleLogin = async ()=>{
+await authClient.signIn.social({
+  provider: "google",
+  
+})
 }
 
 
-};
 
   return (
   
@@ -105,6 +121,24 @@ if (!error) {
         </Button>
       </div>
     </Form>
+
+     
+<div className="mt-4 flex flex-col gap-3">
+            <Button onClick={handleGoogleLogin}  className="w-full  text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-purple-200">
+             <GrGoogle></GrGoogle> Login with Google
+            </Button>
+        </div>
+
+    <p className="text-center text-sm text-gray-600 mt-4">
+    Already have an account?{" "}
+    <Link
+        href="/register"
+        className="text-purple-600 font-medium hover:underline">
+        Register now
+    </Link>
+</p>
+
+    
   </div>
    </Card>
     </div>
