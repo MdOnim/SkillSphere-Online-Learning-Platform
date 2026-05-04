@@ -38,10 +38,10 @@ export default function LogiinPage() {
 if (!error) {
   router.push("/");
   toast.success("Login successful!");
-  setTimeout(() => {
-        router.push("/");
-        router.refresh();
-      }, 500);
+  // setTimeout(() => {
+  //       router.push("/");
+  //       router.refresh();
+  //     }, 500);
 
 } else {
   toast.error("Invalid email or password.");
@@ -52,7 +52,6 @@ if (!error) {
 const handleGoogleLogin = async ()=>{
 await authClient.signIn.social({
   provider: "google",
-  
 })
 }
 
