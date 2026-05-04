@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎓 SkillSphere | Premium E-Learning Platform
 
-## Getting Started
+**SkillSphere** is a high-performance, minimalist online learning platform built for modern students. It features a sleek "Total Dark" user interface, dynamic course searching, and a seamless authentication flow.
 
-First, run the development server:
+### 🔗 Live Deployment
+**Live URL:** https://skill-sphere-online-learning-platfo-seven.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+*   **Premium Minimalist Design:** A sophisticated "Total Dark" aesthetic with clean borders and high-end UI components.
+*   **Dynamic Course Library:** Users can browse and search through a diverse library of courses with real-time filtering.
+*   **Optimized Performance:** Built with Next.js App Router and Server-Side Rendering (SSR) for lightning-fast data fetching.
+*   **Secure Authentication:** Powered by **Better-Auth**, supporting secure Google and Email-based sign-ins.
+*   **Total Responsiveness:** Tailored experience across Mobile, Tablet, and Desktop. Essential UI elements like the Avatar and Logout remain accessible on all devices.
+*   **Instant Feedback:** Integrated **React-Toastify** for sleek, non-intrusive user notifications.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Framework:** Next.js (App Router)
+*   **Language:** JavaScript (JSX)
+*   **Styling:** Tailwind CSS & DaisyUI
+*   **Components:** HeroUI (formerly NextUI) & Framer Motion
+*   **Database:** MongoDB
+*   **Authentication:** Better-Auth
+*   **Icons:** Lucide React
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Core Dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project utilizes the following key npm packages:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   `@heroui/react`
+*   `better-auth`
+*   `react-toastify`
+*   `framer-motion`
+*   `lucide-react`
+*   `mongodb`
+
+---
+
+## ⚙️ Environment Configuration
+
+To run this project locally, create a `.env.local` file and configure the following variables:
+
+```env
+DATABASE_URL=your_mongodb_uri
+BETTER_AUTH_SECRET=your_auth_secret
+NEXT_PUBLIC_APP_URL=http://localhost:3000

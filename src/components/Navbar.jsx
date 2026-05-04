@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { MdMenuBook } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import { usePathname } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
@@ -126,7 +125,7 @@ const handleLogout = async () => {
         {/* Sidebar Header */}
         <div className="flex justify-between items-center px-6 py-4 text-white border-b border-gray-700">
           <h1 className="text-lg font-bold flex items-center gap-2">
-            <MdMenuBook className="text-xl text-purple-500" />
+            
             SkillSphere
           </h1>
 
