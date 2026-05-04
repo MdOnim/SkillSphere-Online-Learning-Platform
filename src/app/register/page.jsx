@@ -50,7 +50,7 @@ if (!error) {
   return (
   
     <div className="p-4" >
-      <Card className="flex flex-col md:flex-row mx-auto w-full max-w-4xl overflow-hidden border-none shadow-2xl m-10 rounded-3xl container ">
+      <Card className="flex flex-col md:flex-row mx-auto w-full max-w-4xl overflow-hidden border-none shadow-2xl m-10 rounded-3xl container mx-auto">
 
   {/* ata hocche image section */}
   <div className="hidden md:flex w-1/2 bg-[#7C3AED] items-center justify-center p-12">
